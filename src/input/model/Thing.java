@@ -20,4 +20,10 @@ public class Thing
 		this.weight = weight;
 		
 	}
+	
+	public String toString()
+	{
+		String thingInfo = name + "is" + age + " years old and weighs " + weight;
+		return thingInfo;
+	}
 }

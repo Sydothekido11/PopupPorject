@@ -1,12 +1,12 @@
 package input.controller;
 
+import input.model.Thing;
 import input.view.PopupDisplay;
-
-private Thing.myThing
 
 public class PopupController
 {
 	private PopupDisplay myPopups;
+	private Thing myThing;
 	
 	public PopupController()
 	{
@@ -22,6 +22,12 @@ public class PopupController
 		
 		int age;
 		String tempAge = myPopups.getAnswers("Type in your age");
+		
+		while(!isInteger(tempAge))
+		{
+			tempAge = myPopups.getAnswers("Type in an integer value!");
+		}
+		
 		if(isInteger(tempAge))
 		{
 			age = Integer.parseInt(tempAge);
@@ -47,6 +53,8 @@ public class PopupController
 		myPopups.displayResponse("You typed in " + weight);
 		
 		myThing = new Thing(name, age, weight);
+		
+		myPopups.displayResponse(myThing.toString());
 	}
 		
 	private boolean isInteger(String input)
