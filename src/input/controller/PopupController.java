@@ -13,7 +13,11 @@ public class PopupController
 		myPopups = new PopupDisplay();
 	}
 	
-
+/**
+ * Displays the windows necessary for the user to type in the information.
+ * It also defends itself with if and else statements if the user types in info that is not valid for the required primitve.
+ * 
+ */
 	public void start()
 	{
 		String name = myPopups.getAnswers("Type in your name");
@@ -61,7 +65,9 @@ public class PopupController
 		
 		myPopups.displayResponse(myThing.toString());
 	}
-		
+		/**
+		 * Displays a window telling the user their information is not valid and then displays the user input window again.
+		 */
 	private boolean isInteger(String input)
 	{
 		boolean isInt = false;
